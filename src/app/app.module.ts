@@ -1,12 +1,16 @@
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { TesteComponent } from './teste/teste.component';
 import { LoginPageComponent } from './pages/public/login-page/login-page.component';
 import { CriaUsuarioPageComponent } from './pages/public/cria-usuario-page/cria-usuario-page.component';
+import localeExtraPt from '@angular/common/locales/extra/pt';
+import localePt from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
 
+registerLocaleData(localePt, 'pt', localeExtraPt);
 
 @NgModule({
   declarations: [
@@ -15,8 +19,8 @@ import { CriaUsuarioPageComponent } from './pages/public/cria-usuario-page/cria-
     LoginPageComponent,
     CriaUsuarioPageComponent,
   ],
-  imports: [AppRoutingModule, BrowserModule, FormsModule, ReactiveFormsModule ],
-  providers: [],
+  imports: [AppRoutingModule, BrowserModule, FormsModule, ReactiveFormsModule],
+  providers: [{ provide: LOCALE_ID, useValue: 'pt' }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

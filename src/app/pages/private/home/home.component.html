@@ -1,1 +1,8 @@
-<p>home works!</p>
+<rf-cadastro-abastecimento
+  [combustivel]="abastecimento.combustivel"
+  [valor]="abastecimento.valor"
+  [abastecimento]="abastecimento"
+  (aoSalvar)="aoSalvarAbastecimento($event)"
+></rf-cadastro-abastecimento>
+
+<rf-ultimo-abastecimento></rf-ultimo-abastecimento>

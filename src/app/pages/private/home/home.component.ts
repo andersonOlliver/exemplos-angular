@@ -1,3 +1,5 @@
+import { AbastecimentoService } from './../../../shared/services/abastecimento.service';
+import { Abastecimento } from './../../../model/abastecimento';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
@@ -5,7 +7,12 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  constructor() {
+  abastecimento = {
+    combustivel: 'Gasolina',
+    valor: 50.0,
+  };
+
+  constructor(private abastecimentoService: AbastecimentoService) {
     console.log('Construiu a página Home');
   }
   ngOnDestroy(): void {
@@ -16,4 +23,8 @@ export class HomeComponent implements OnInit, OnDestroy {
     console.log('Iniciou a página Home');
   }
 
+  aoSalvarAbastecimento($event: Abastecimento): void {
+    console.log($event);
+    this.abastecimentoService.atualizaValor($event);
+  }
 }
