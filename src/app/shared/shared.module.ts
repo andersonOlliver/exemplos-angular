@@ -3,10 +3,19 @@ import { CadastroAbastecimentoComponent } from './components/cadastro-abastecime
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UltimoAbastecimentoComponent } from './components/ultimo-abastecimento/ultimo-abastecimento.component';
+import { CpfPipe } from './pipe/cpf.pipe';
 
 @NgModule({
-  declarations: [CadastroAbastecimentoComponent, UltimoAbastecimentoComponent],
+  declarations: [
+    CadastroAbastecimentoComponent,
+    CpfPipe,
+    UltimoAbastecimentoComponent,
+  ],
   imports: [CommonModule, ReactiveFormsModule],
-  exports: [CadastroAbastecimentoComponent, UltimoAbastecimentoComponent],
+  exports: [
+    CadastroAbastecimentoComponent,
+    CpfPipe,
+    UltimoAbastecimentoComponent,
+  ],
 })
 export class SharedModule {}

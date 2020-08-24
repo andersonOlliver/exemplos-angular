@@ -16,6 +16,7 @@ import { RouterModule } from '@angular/router';
         component: CriaUsuarioPageComponent,
       },
       { path: 'home', loadChildren: () => import('./pages/private/home/home.module').then(m => m.HomeModule) },
+      { path: 'usuario', loadChildren: () => import('./pages/private/usuario/usuario.module').then(m => m.UsuarioModule) },
     ]),
   ],
   exports: [RouterModule],

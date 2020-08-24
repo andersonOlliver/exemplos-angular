@@ -9,6 +9,7 @@ import { CriaUsuarioPageComponent } from './pages/public/cria-usuario-page/cria-
 import localeExtraPt from '@angular/common/locales/extra/pt';
 import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 registerLocaleData(localePt, 'pt', localeExtraPt);
 
@@ -19,7 +20,13 @@ registerLocaleData(localePt, 'pt', localeExtraPt);
     LoginPageComponent,
     CriaUsuarioPageComponent,
   ],
-  imports: [AppRoutingModule, BrowserModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    AppRoutingModule,
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+  ],
   providers: [{ provide: LOCALE_ID, useValue: 'pt' }],
   bootstrap: [AppComponent],
 })
