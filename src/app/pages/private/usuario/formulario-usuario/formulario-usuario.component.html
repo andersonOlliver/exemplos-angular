@@ -1,1 +1,43 @@
-<p>formulario-usuario works!</p>
+<div class="container">
+  <div class="row">
+    <div class="card col-sm-6 col-md-4 offset-sm-2 offset-md-4 mt-4 p-4">
+      <form [formGroup]="form" (ngSubmit)="criar()">
+        <div class="form-group">
+          <label for="nome">Nome</label>
+          <input
+            id="nome"
+            class="form-control"
+            name="email"
+            type="text"
+            formControlName="nome"
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input
+            id="email"
+            class="form-control"
+            name="email"
+            formControlName="email"
+            type="password"
+          />
+        </div>
+        <div class="form-group">
+          <label for="cpf">CPF</label>
+          <input
+            id="cpf"
+            class="form-control"
+            name="cpf"
+            rfCpf="999.999.999-99"
+            formControlName="cpf"
+            type="text"
+          />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<a class="btn btn-link" routerLink="/usuario">Voltar para home</a>

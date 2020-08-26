@@ -15,25 +15,23 @@
             aria-describedby="emailHelp"
           />
           <small
-            id="emailHelp"
             *ngIf="
               estaInvalido('email') && form.get('email').errors.email !== null"
             class="form-text red"
-            >Forneça um e-mail válido.</small
+          >Forneça um e-mail válido.</small
           >
           <small
-            id="emailHelp"
             *ngIf="
               form.get('email').touched &&
               form.get('email').invalid &&
               form.get('email').errors.minLenght !== null
             "
             class="form-text red"
-            >Campo deverá conter no mínimo 10 caracteres.</small
+          >Campo deverá conter no mínimo 10 caracteres.</small
           >
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
+          <label for="input-password">Password</label>
           <input
             id="input-password"
             class="form-control"
@@ -45,7 +43,7 @@
         </div>
 
         <div class="form-group">
-          <label for="exampleInputPassword1">Confirm Password</label>
+          <label for="input-confirm-password">Confirm Password</label>
           <input
             id="input-confirm-password"
             class="form-control"

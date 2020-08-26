@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
@@ -16,8 +16,14 @@ export class FormularioUsuarioComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.formBuilder.group({
       nome: [''],
+      email: [''],
       cpf: ['']
     });
   }
+
+  criar(): void {
+    console.log(this.form);
+  }
+
 
 }

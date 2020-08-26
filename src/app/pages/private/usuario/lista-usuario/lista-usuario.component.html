@@ -8,11 +8,13 @@
     </tr>
   </thead>
   <tbody>
+
     <tr *ngFor="let usuario of usuarios; let index = index">
       <th scope="row">{{ index + 1 }}</th>
       <td>{{ usuario.nome }}</td>
       <td>{{ usuario.cpf | cpf: tiposPipe.CPF }}</td>
       <td>{{ usuario.email }}</td>
     </tr>
+
   </tbody>
 </table>

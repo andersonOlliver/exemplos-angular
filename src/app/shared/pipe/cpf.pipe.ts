@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { converteCpf } from '../functions';
 
 @Pipe({
   name: 'cpf',
@@ -9,24 +10,12 @@ export class CpfPipe implements PipeTransform {
     console.log(tipo);
 
     if (tipo === TipoPipe.CPF) {
-      return this.converteCpf(value);
+      return converteCpf(value);
     }
     return this.converteCnpj(value);
   }
 
-  private converteCpf(numero: string) {
-    const tamanho = numero.length;
 
-    if (tamanho < 4) {
-      return numero;
-    } else if (tamanho < 7) {
-      return numero.replace(/(\d{3})(\d+)/, ' $1.$2');
-    } else if (tamanho < 10) {
-      return numero.replace(/(\d{3})(\d{3})(\d+)/, ' $1.$2.$3');
-    } else {
-      return numero.replace(/(\d{3})(\d{3})(\d{3})(\d+)/, ' $1.$2.$3-$4');
-    }
-  }
 
   private converteCnpj(numero: string) {
     const tamanho = numero.length;
